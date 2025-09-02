@@ -1,0 +1,43 @@
+# 实验报告和文档文件
+*.docx
+*.doc
+*.zip
+
+# 实验细则文件
+*_TLS实验细则.docx
+
+# 不需要的Python文件
+1.py
+
+# 会话密钥文件（运行时生成）
+session.key
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# Python缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
