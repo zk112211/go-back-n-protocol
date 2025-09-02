@@ -1,81 +1,81 @@
-# TLS 安全通信项目
+# TLS Secure Communication Project
 
-这是一个基于Python实现的TLS（Transport Layer Security）安全通信项目，实现了客户端和服务器之间的加密通信。
+This is a Python-based TLS (Transport Layer Security) secure communication project that implements encrypted communication between client and server.
 
-## 项目特性
+## Project Features
 
-- **AES-128加密**: 使用AES-128算法对数据进行加密
-- **CBC模式**: 采用Cipher Block Chaining模式确保加密安全性
-- **HMAC验证**: 使用HMAC-SHA256进行消息认证码验证
-- **PKCS7填充**: 实现标准的数据填充机制
-- **会话密钥管理**: 动态生成和管理会话密钥
+- **AES-128 Encryption**: Uses AES-128 algorithm for data encryption
+- **CBC Mode**: Adopts Cipher Block Chaining mode to ensure encryption security
+- **HMAC Verification**: Uses HMAC-SHA256 for message authentication code verification
+- **PKCS7 Padding**: Implements standard data padding mechanism
+- **Session Key Management**: Dynamically generates and manages session keys
 
-## 项目结构
+## Project Structure
 
 ```
 TLSpj/
-├── client.py          # 客户端程序
-├── server.py          # 服务器程序
-├── session.key        # 会话密钥文件（运行时生成）
-└── README.md          # 项目说明文档
+├── client.py          # Client program
+├── server.py          # Server program
+├── session.key        # Session key file (generated at runtime)
+└── README.md          # Project documentation
 ```
 
-## 安装要求
+## Installation Requirements
 
-### 系统要求
+### System Requirements
 - Python 3.6+
 - macOS/Linux/Windows
 
-### 依赖包
+### Dependencies
 ```bash
 pip install cryptography
 ```
 
-## 使用方法
+## Usage
 
-### 1. 启动服务器
+### 1. Start Server
 ```bash
 python server.py
 ```
-服务器将在本地12345端口监听连接。
+The server will listen for connections on local port 12345.
 
-### 2. 启动客户端
+### 2. Start Client
 ```bash
 python client.py
 ```
-客户端将连接到服务器，并提示输入要发送的消息。
+The client will connect to the server and prompt for a message to send.
 
-### 3. 通信流程
-1. 客户端生成随机会话密钥
-2. 客户端输入消息并进行AES加密
-3. 生成HMAC消息认证码
-4. 将加密数据和MAC发送到服务器
-5. 服务器验证MAC并解密消息
-6. 显示解密后的原始消息
+### 3. Communication Flow
+1. Client generates a random session key
+2. Client inputs a message and performs AES encryption
+3. Generates HMAC message authentication code
+4. Sends encrypted data and MAC to server
+5. Server verifies MAC and decrypts the message
+6. Displays the decrypted original message
 
-## 技术实现
+## Technical Implementation
 
-### 加密算法
-- **对称加密**: AES-128
-- **加密模式**: CBC (Cipher Block Chaining)
-- **填充方式**: PKCS7
-- **密钥长度**: 128位
+### Encryption Algorithm
+- **Symmetric Encryption**: AES-128
+- **Encryption Mode**: CBC (Cipher Block Chaining)
+- **Padding Method**: PKCS7
+- **Key Length**: 128 bits
 
-### 安全特性
-- **消息完整性**: HMAC-SHA256验证
-- **密钥管理**: 每次会话生成新的随机密钥
-- **向量初始化**: 使用零向量作为CBC模式的IV
+### Security Features
+- **Message Integrity**: HMAC-SHA256 verification
+- **Key Management**: Generates new random key for each session
+- **Vector Initialization**: Uses zero vector as IV for CBC mode
 
-## 注意事项
+## Important Notes
 
-- 本项目仅用于学习和演示目的
-- 生产环境中应使用更安全的密钥交换机制
-- 建议在受控的测试环境中运行
+- This project is for learning and demonstration purposes only
+- Production environments should use more secure key exchange mechanisms
+- Recommended to run in controlled test environments
 
-## 许可证
+## License
 
-本项目仅供学习使用。
+This project is for educational use only.
 
-## 贡献
+## Contributing
 
-欢迎提交Issue和Pull Request来改进项目。
+Welcome to submit Issues and Pull Requests to improve the project.
